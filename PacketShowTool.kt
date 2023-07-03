@@ -7,7 +7,7 @@ class PacketShowTool : JavaPlugin() {
             @EventHandler
             fun onJoin(event: PlayerJoinEvent) {
                 val player = event.player
-                val entityPlayer = (player as CraftPlayer).playerConnection
+                val entityPlayer = (player as CraftPlayer).entityPlayer.b
 
                 val packetShowTool = PacketShowTool()
 
