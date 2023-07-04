@@ -12,7 +12,7 @@ class PacketShowTool : JavaPlugin() {
             @EventHandler
             fun onJoin(event: PlayerJoinEvent) {
                 val player = event.player
-                val playerConnection = (player as CraftPlayer).entityPlayer.b
+                val playerConnection = (player as CraftPlayer).handle.b
                 val packetShowTool = PacketShowTool()
                 playerConnection.getNetworkManager().addHandler(packetShowTool)
             }
@@ -20,7 +20,7 @@ class PacketShowTool : JavaPlugin() {
             @EventHandler
             fun onQuit(event: PlayerQuitEvent) {
                 val player = event.player
-                val playerConnection = (player as CraftPlayer).entityPlayer.b
+                val playerConnection = (player as CraftPlayer).handle.b
                 playerConnection.getNetworkManager().removeHandler()
             }
         }, this)
