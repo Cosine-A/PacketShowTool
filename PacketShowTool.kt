@@ -53,9 +53,9 @@ private fun PlayerConnection.getNetworkManager(): NetworkManager {
 }
 
 private fun NetworkManager.addHandler(channelHandler: ChannelHandler) {
-    m.pipeline().addBefore("packet_handler", "trade_handler", channelHandler)
+    m.pipeline().addBefore("packet_handler", "test_handler", channelHandler)
 }
 
 private fun NetworkManager.removeHandler() {
-    m.pipeline().remove("trade_handler")
+    m.pipeline().remove("test_handler")
 }
