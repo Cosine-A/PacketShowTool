@@ -59,3 +59,29 @@ private fun NetworkManager.addHandler(channelHandler: ChannelHandler) {
 private fun NetworkManager.removeHandler() {
     m.pipeline().remove("test_handler")
 }
+
+/*override fun channelRead(ctx: ChannelHandlerContext, msg: Any) {
+        if (msg !is PacketPlayInFlying.PacketPlayInLook &&
+            msg !is PacketPlayInFlying.PacketPlayInPosition &&
+            msg !is PacketPlayInFlying.PacketPlayInPositionLook
+        ) {
+            println("Read: ${msg::class.simpleName}")
+        }
+        super.channelRead(ctx, msg)
+    }
+
+    override fun write(ctx: ChannelHandlerContext, msg: Any, promise: ChannelPromise) {
+        if (msg !is PacketPlayOutEntityHeadRotation &&
+            msg !is PacketPlayOutEntity.PacketPlayOutRelEntityMove &&
+            msg !is PacketPlayOutEntity.PacketPlayOutRelEntityMoveLook &&
+            msg !is PacketPlayOutEntityVelocity &&
+            msg !is PacketPlayOutEntityTeleport &&
+            msg !is ClientboundLevelChunkWithLightPacket &&
+            msg !is PacketPlayOutLightUpdate &&
+            msg !is PacketPlayOutUpdateTime &&
+            msg !is PacketPlayOutUnloadChunk
+        ) {
+            println("Write: ${msg::class.simpleName}")
+        }
+        super.write(ctx, msg, promise)
+    }*/
